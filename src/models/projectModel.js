@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { userModel } from "./userModel.js";
 
 const { Schema } = mongoose;
 const projectSchema = new Schema(
@@ -41,8 +40,8 @@ const projectSchema = new Schema(
         },
         phase: {
             type: String,
-            enum: ['NULO','INICIADO', 'EN DESARROLLO', 'TERMINADO'],
-            default: 'NULO'
+            enum: ['NULA','INICIADO', 'EN DESARROLLO', 'TERMINADO'],
+            default: 'NULA'
         }
     },
     {

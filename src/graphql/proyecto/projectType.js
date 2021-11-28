@@ -9,7 +9,7 @@ export const typeProyecto = gql`
     }
 
     enum projectPhase {
-        NULO
+        NULA
         INICIADO
         EN DESARROLLO
         TERMINADO
