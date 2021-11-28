@@ -1,25 +1,31 @@
 import { gql } from "apollo-server-express";
 
-export const typeUsuario = gql`
-    enum userRole {
-        ADMINISTRADOR
-        LIDER
-        ESTUDIANTE
+export const typeProyecto = gql`
+    scalar Date
+
+    enum projectStatus {
+        ACTIVO
+        INACTIVO
     }
 
-    enum userStatus {
-        PENDIENTE
-        AUTORIZADO
-        NO_AUTORIZADO
+    enum projectPhase {
+        NULO
+        INICIADO
+        EN DESARROLLO
+        TERMINADO
     }
 
-    type User {
-        _id: Int!
+    type Project {
+        _id: ID!
         name: String!
-        mail: String!
-        password: String!
-        role: userRole!
-        status: userStatus!
+        generalObjs: String!
+        specificObjs: String!
+        budget: Float!
+        startDate: Date!
+        finishDate: Date!
+        leader_id: Int!
+        status: projectStatus!
+        phase: projectPhase!
     }
     
     type Query {
