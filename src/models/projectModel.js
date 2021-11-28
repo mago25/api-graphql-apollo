@@ -31,7 +31,7 @@ const projectSchema = new Schema(
         leader_id: {
             type: Schema.Types.Number,
             required: true,
-            ref: userModel
+            ref: "usuarios"
         },
         status: {
             type: String,
@@ -49,7 +49,6 @@ const projectSchema = new Schema(
         toJSON: { virtuals: true},
         toObject: { virtuals: true}
     }
-    
 );
 
 export const projectModel = mongoose.model('proyectos', projectSchema);

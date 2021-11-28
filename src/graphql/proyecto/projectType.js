@@ -29,28 +29,36 @@ export const typeProyecto = gql`
     }
     
     type Query {
-        getUsers: [User]
-        getUser(_id: Int): User
+        getProjects: [Project]
+        getProjectByLeader(leader_id: Int): [Project]
     }
 
     type Mutation {
-        createUser(
-            _id: Int!
+        createProject(
+            _id: ID!
             name: String!
-            mail: String!
-            password: String!
-            role: userRole!
-        ): User
+            generalObjs: String!
+            specificObjs: String!
+            budget: Float!
+            startDate: Date!
+            finishDate: Date!
+            leader_id: Int!
+        ): Project
 
-        updateUser(
-            _id: Int!
+        updateProject(
+            _id: ID!
             name: String!
-            mail: String!
-            password: String!
-            status: userStatus!
-        ): User
+            generalObjs: String!
+            specificObjs: String!
+            budget: Float!
+            startDate: Date!
+            finishDate: Date!
+            leader_id: Int!
+            status: projectStatus!
+            phase: projectPhase!
+        ): Project
 
-        deleteUser(_id: Int!) : User
+        deleteProject(_id: ID!) : Project
 
     }
 `;
